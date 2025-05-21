@@ -1,0 +1,11 @@
+/.venv/
+__pycache__/
+/dist/
+/demos/
+.pytest_cache/
+.coverage
+coverage.xml
+coverage.lcov
+.env
+.python-version
+main.py
