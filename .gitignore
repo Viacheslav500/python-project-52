@@ -9,3 +9,5 @@ coverage.lcov
 .env
 .python-version
 main.py
+venv/
+/.venv/
