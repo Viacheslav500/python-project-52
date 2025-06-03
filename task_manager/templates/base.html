@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load django_bootstrap5 %}
+
+    {% bootstrap_css %}
+
+    <title>{% trans "Task manager Hexlet" %}</title>
+</head>
+<body class="d-flex flex-column min-vh-100" text="Вход">
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+        
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="{% url 'home' %}" class="nav-link px-2 text-secondary">{% trans "Task manager" %}</a></li>
+                    <li><a href="{% url 'users' %}" class="nav-link px-2 text-white">{% trans "Users" %}</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'statuses' %}" class="nav-link px-2 text-white">{% trans "Statuses" %}</a></li>
+                        <li><a href="{% url 'labels' %}" class="nav-link px-2 text-white">{% trans "Labels" %}</a></li>
+                        <li><a href="{% url 'tasks' %}" class="nav-link px-2 text-white">{% trans "Tasks" %}</a></li>
+                    {% endif %}
+                </ul>
+        
+                <div class="text-end">
+                    {% if user.is_authenticated %}
+                        <span class="text-white me-2">{{ user.username }}</span>
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">{% trans "Logout" %}</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-outline-light me-2">{% trans "Log In" %}</a>
+                        <a href="{% url 'user_create' %}" class="btn btn-primary">{% trans "Registration" %}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    {% bootstrap_messages %}
+
+
+    <div class="wrapper flex-grow-1">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    
+</body>
+</html>
