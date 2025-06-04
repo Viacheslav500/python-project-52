@@ -11,3 +11,4 @@ coverage.lcov
 main.py
 venv/
 /.venv/
+db.sqlite3
