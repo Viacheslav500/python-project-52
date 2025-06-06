@@ -15,7 +15,7 @@ build:
 	./build.sh
 
 start:
-	uv run gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
+	gunicorn task_manager.wsgi:application
 
 test:
 	uv run python3 manage.py test
