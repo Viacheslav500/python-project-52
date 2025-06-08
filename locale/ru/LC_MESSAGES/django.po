@@ -53,7 +53,7 @@ msgstr "Создать метку"
 #: task_manager/labels/views.py:26 task_manager/statuses/views.py:26
 #: task_manager/tasks/views.py:30
 msgid "Create"
-msgstr "СОздать"
+msgstr "Создать"
 
 #: task_manager/labels/views.py:34 task_manager/tests/test_labels.py:40
 msgid "Label was updated"
