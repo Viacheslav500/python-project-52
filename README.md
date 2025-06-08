@@ -7,7 +7,7 @@
 
 ### Project description:
 
-	Task manager is a web application that helps users manage their tasks.
+Task manager is a web application that helps users manage their tasks.
 
 
 ### Link to the project on Render.com:
